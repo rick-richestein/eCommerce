@@ -1,3 +1,10 @@
+/* Importing modules */
+
+const path =require('path');                      // for importinh html
+
+//const  userRoutes=require("./user");
+const adminExports=require("../controllers/orderExport");
+
 /* Using Express */
 const express = require("express");
 
@@ -5,12 +12,9 @@ const express = require("express");
 const router=express.Router();
 
 /*  Code */
-
-router.use("/admin",(req,res,next)=>{   
-    res.send("<h1>This is Admin..Display All Orders</head>");
-
-    //next();  Allows to move to next  use
-});
+//console.log("userroutes:")
+//console.log(userRoutes.orders);
+router.use("/admin",adminExports.adminOrder);
 
 
 

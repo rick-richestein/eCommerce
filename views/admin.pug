@@ -1,0 +1,35 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{docTitle}
+        link(rel="stylesheet", href="/css/admin.css")
+        link(rel="stylesheet", href="/css/user.css")
+    body 
+        header.main-header 
+            nav.main-header__nav
+                ul.main-header__item-list
+                    li.main-header__item
+                        a(href="/" , class=(path==='/' ? "active" : "")) HOME
+                    li.main-header__item
+                        a(href="/add-order",class=(path==='/add-order' ? "active" : "")) ADD ORDER
+                    li.main-header__item
+                        a(href="") ADMIN ORDERS
+        main     
+            h1 My Orders
+            p List Of All Orders.... 
+        if order.length > 0
+                .grid
+                    each orders in order
+                        article.card.product-item    
+                            header.card__header
+                                h1.product__size #{orders.size}
+                            div.card__content
+                                h2.product__quantity #{orders.quantity}
+                                h2.product__quantity #{orders.imageUrl}
+                                h2.product__price   RS.#{orders.price} per kg
+                                p.product__description #{orders.description}
+        else
+                h1 No Products      

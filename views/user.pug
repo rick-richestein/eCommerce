@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{docTitle}
+        link(rel="stylesheet", href="/css/user.css")
+    body 
+        header.main-header 
+            nav.main-header__nav
+                ul.main-header__item-list
+                    li.main-header__item
+                        a(href="/") HOME
+                    li.main-header__item
+                        a(href="/add-order", class=(path==='/add-order' ? "active" : "")) ADD ORDER  
+                    li.main-header__item
+                        a(href="") ADMIN ORDERS    
+        main     
+            form.product-form(action="/add-order",method="POST")
+                div.form-control
+                    label(for="order") Order 
+                    input(type="text", name="order")#order
+                div.form-control
+                    label(for="quantity") Quantity 
+                    input(type="text", name="quantity")#quantity
+                div.form-control
+                    label(for="desciption") Description 
+                    input(type="text", name="desciption")#desciption
+                div.form-control
+                    label(for="imageUrl") Image  
+                    input(type="text", name="imageUrl")#imageUrl    
+                div.form-control
+                    label(for="price") Price 
+                    input(type="text", name="price")#price            
+                button(type="submit") ADD ORDER    
