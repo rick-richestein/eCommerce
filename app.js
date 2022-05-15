@@ -19,7 +19,7 @@ const adminOrderRoutes=require("./routes/adminOrders");
 
 
 //connecting sql
-//db.execute("").then().catch();
+//db.execute("CREATE TABLE t1(a int DEFAULT (1+1),b int DEFAULT (a+1);").then().catch();
 
 /* Using Express */
 const app = express();
