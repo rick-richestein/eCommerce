@@ -13,13 +13,14 @@ exports.getAddOrder=(req,res,next)=>{
 }
 
 exports.postAddorder=(req,res,next)=>{   
+    const name =req.body.name;
     const order=req.body.order;
     const quantity=req.body.quantity;
     const desciption=req.body.desciption;
     const imageUrl=req.body.imageUrl;
     const price=req.body.price;
     console.log(req.body);
-    const orders =new Order(order,quantity,desciption,imageUrl,price);
+    const orders =new Order(name,order,quantity,desciption,imageUrl,price);
     orders.save();
   //  orders.push({size : req.body.order});                        // using model class now
     res.send("<h1>Order Placed Successfull</head>");
@@ -28,7 +29,7 @@ exports.postAddorder=(req,res,next)=>{
 }
 
 exports.adminOrder=(req,res,next)=>{   
-    Order.fetchAll((orderList)=>{
+    /* Order.fetchAll(()=>{
             // const orderList=userRoutes.orders;
         console.log("order in admin:");
         // console.log(orders); 
@@ -38,6 +39,18 @@ exports.adminOrder=(req,res,next)=>{
     
         //next();  Allows to move to next  use
       
-    });
-  
+    }); */
+    let display;
+    let orderList=Order.fetchAll();
+    orderList.then(function(result) {
+      console.log('result') // "Some User token"
+      console.log(result) // "Some User token"
+      //console.log('result222222') // "Some User token"
+      console.log("order in admin:");
+     // console.log(result)
+      res.render("admin",{order:result , docTitle:"Your Orderssss" , path:"/add-order"});
+    })
+      // const orderList=userRoutes.orders;
+   
+
 }
