@@ -21,6 +21,26 @@ html(lang="en")
             h1 My Orders
             p List Of All Orders.... 
         if order.length > 0
+            table
+                tr  
+                    th User
+                    th Size
+                    th Quantity
+                    th ImageURL
+                    th Description 
+                    th Rate
+                each orders in order
+                    tr
+                        td #{orders.name}
+                        td #{orders.size}
+                        td #{orders.quantity}
+                        td #{orders.imageUrl}
+                        td #{orders.description}
+                        td RS.#{orders.price} per kg    
+                        
+        else
+                h1 No Products     
+        if order.length > 0
                 .grid
                     each orders in order
                         article.card.product-item    
@@ -33,3 +53,7 @@ html(lang="en")
                                 p.product__description #{orders.description}
         else
                 h1 No Products      
+        footer
+            p Author: Hege Refsnes
+            p 
+                a(href="mailto:hege@example.com") hege@example.com    

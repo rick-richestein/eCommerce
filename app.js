@@ -7,8 +7,8 @@ const path =require("path");
 const express = require("express");
 const bodyParser = require("body-parser");         // trasnfer req data across routs
 
-// importinh sql
-const db=require("./util/database");
+// importinh mariadb
+const mongoConnect=require("./util/database").mongoConnect;
 
 /* Exported Modules */
 const  userRoutes=require("./routes/user");
@@ -17,9 +17,15 @@ const errorRoutes=require("./routes/404");
 const homeRoutes=require("./routes/home");
 const adminOrderRoutes=require("./routes/adminOrders");
 
-
 //connecting sql
-//db.execute("CREATE TABLE t1(a int DEFAULT (1+1),b int DEFAULT (a+1);").then().catch();
+/* db.execute("Select * from order").
+    then(result=>{
+    console.log("result");
+    crossOriginIsolated.log(result);
+}).catch(err=>{
+    console.log("error");
+    console.log(err);
+}); */
 
 /* Using Express */
 const app = express();
@@ -40,14 +46,19 @@ app.use(express.static(path.join(__dirname,"public")))
 
 app.use(userRoutes);
 
-app.use(adminRoutes);
+app.use(adminRoutes);   
 
-app.use(adminOrderRoutes);
+app.use(adminOrderRoutes); 
 
-app.use(homeRoutes);
+app.use(homeRoutes); 
 
 app.use(errorRoutes);
 
 
-/* Listen to Server */
+// connecting mariadb
+
+mongoConnect(()=>{
+
+})
+//listen to server 
 app.listen(3000);
