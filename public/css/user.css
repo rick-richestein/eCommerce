@@ -1,18 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 
-* {
-    box-sizing: border-box;
+* { 
+     margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
 }  
-body, html {
-  height: 100%;
-} 
 body {
     padding: 0;
     margin: 0;
+    background: #fcfcfc;
     font-family: 'Open Sans', sans-serif;
 }
 main {
     padding: 1rem;
+    height: 100%;
     margin: auto;
 }
 form {
@@ -20,12 +21,6 @@ form {
 }
 .centered {
     text-align: center;
-}
-.image {
-    height: 20rem;
-}
-.image img {
-    height: 100%;
 }
 .main-header {
     width: 100%;
@@ -120,22 +115,80 @@ button:active{
 .product__description {
     text-align: center;
 }
-footer {
-    position: fixed;
-    text-align: center;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    padding: 3px;
-    background-color: DarkSalmon;
-    color: white;
+footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #111;
+  height: 27%;
+  width: 100vw;
+  padding-top: 40px;
+  color: #fff;
 }
-.bg {
-    background-image: url("img_girl.jpg");
-    height: 100%; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.footer-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.footer-content h3{
+  font-size: 2.1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 3rem;
+}
+.footer-content p{
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+  color: #cacdd2;
+}
+.footer-bottom{
+  background: #000;
+  width: 100vw;
+  padding: 20px;
+  padding-bottom: 40px;
+  text-align: center;
+}
+.footer-bottom h6{
+  float: left;
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+.footer-bottom h6 a{
+ color:#44bae8;
+ font-size: 16px;
+ text-decoration: none;
+}
+.footer-bottom span{
+   text-transform: uppercase;
+   opacity: .4;
+   font-weight: 200;
+}
+.footer-menu{
+  float: right;
+}
+
+.footer-menu ul{
+  display: flex;
+}
+
+.footer-menu ul li{
+padding-right: 10px;
+display: block;
+}
+
+.footer-menu ul li a{
+  color: #cfd2d6;
+  text-decoration: none;
+}
+
+.footer-menu ul li a:hover{
+  color: #27bcda;
 }
 
 
@@ -143,12 +196,6 @@ footer {
 
 
 
-
-
-
-
-
-/* 
 
 
 
@@ -228,7 +275,7 @@ footer {
   z-index: 5;
   display: none;
 }
- */
+
 /* .grid {
   display: flex;
   flex-wrap: wrap;

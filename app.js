@@ -43,12 +43,12 @@ app.use(express.static(path.join(__dirname,"public")))
 
 /* Code */
 
-
-app.use(userRoutes);
+/* */
+app.use(userRoutes); 
 
 app.use(adminRoutes);   
 
-app.use(adminOrderRoutes); 
+app.use(adminOrderRoutes);  
 
 app.use(homeRoutes); 
 

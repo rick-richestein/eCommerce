@@ -20,40 +20,38 @@ html(lang="en")
         main     
             h1 My Orders
             p List Of All Orders.... 
-        if order.length > 0
-            table
-                tr  
-                    th User
-                    th Size
-                    th Quantity
-                    th ImageURL
-                    th Description 
-                    th Rate
-                each orders in order
-                    tr
-                        td #{orders.name}
-                        td #{orders.size}
-                        td #{orders.quantity}
-                        td #{orders.imageUrl}
-                        td #{orders.description}
-                        td RS.#{orders.price} per kg    
-                        
-        else
-                h1 No Products     
-        if order.length > 0
-                .grid
+            if order.length > 0
+                table
+                    tr  
+                        th User
+                        th Size
+                        th Quantity
+                        th ImageURL
+                        th Description 
+                        th Rate
                     each orders in order
-                        article.card.product-item    
-                            header.card__header
-                                h1.product__size #{orders.size}
-                            div.card__content
-                                h2.product__quantity #{orders.quantity}
-                                h2.product__quantity #{orders.imageUrl}
-                                h2.product__price   RS.#{orders.price} per kg
-                                p.product__description #{orders.description}
-        else
-                h1 No Products      
+                        tr
+                            td #{orders.name}
+                            td #{orders.size}
+                            td #{orders.quantity}
+                            td #{orders.imageUrl}
+                            td #{orders.description}
+                            td RS.#{orders.price} per kg    
+                            
+            else
+                    h1 No Products     
         footer
-            p Author: Hege Refsnes
-            p 
-                a(href="mailto:hege@example.com") hege@example.com    
+            div.footer-content
+                h3 FOR SHRI KRISHNA ENTERPRISES
+                    p Conatct us @
+                    div.footer-bottom
+                        h6 copyright &copy;2022 
+                            a(href="#") Utsav Garg
+                        div.footer-menu
+                            ul.f-menu
+                                li 
+                                    a(href="") Home
+                                li 
+                                    a(href="") About 
+                                li 
+                                    a(href="") Contact
