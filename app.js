@@ -52,7 +52,7 @@ app.use(adminOrderRoutes);
 
 app.use(homeRoutes); 
 
-app.use(errorRoutes);
+app.use(errorRoutes); 
 
 
 // connecting mariadb
@@ -61,4 +61,4 @@ mongoConnect(()=>{
 
 })
 //listen to server 
-app.listen(3000);
+app.listen(3001);
